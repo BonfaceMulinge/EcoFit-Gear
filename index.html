@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoFit Gear - Sustainable Athletic Apparel</title>
+    <meta name="description" content="EcoFit Gear — sustainable athletic apparel made from recycled and organic materials. Performance, traceability, and community.">
+    <!-- Open Graph for social previews -->
+    <meta property="og:title" content="EcoFit Gear — Sustainable Athletic Apparel">
+    <meta property="og:description" content="Performance meets responsibility. Explore EcoFit's sustainable athletic apparel and recycling program.">
+    <meta property="og:image" content="images/og-preview.png">
+    <meta property="og:type" content="website">
+
+    <!-- favicon (put images/favicon.png in images/) -->
+    <link rel="icon" href="images/favicon.png" type="image/png">
+
     <style>
         * {
             margin: 0;
@@ -54,6 +64,8 @@
             color: #2d5016;
             font-size: 24px;
         }
+
+        .logo img { width: 48px; height: 48px; object-fit: contain; display:block; }
 
         .brand-name {
             font-size: 1.5rem;
@@ -165,6 +177,8 @@
             font-size: 4rem;
         }
 
+        .product-image img { width:100%; height:100%; object-fit:cover; display:block; }
+
         .product-info {
             padding: 1.5rem;
         }
@@ -267,10 +281,7 @@
             transition: transform 0.3s, background 0.3s;
         }
 
-        .social-icon:hover {
-            background: #4a7c2c;
-            transform: scale(1.1);
-        }
+        .social-icon img { width: 28px; height: 28px; display:block; }
 
         .recycling-program {
             background: #e8f5e9;
@@ -331,7 +342,10 @@
     <header>
         <nav>
             <div class="logo-container">
-                <div class="logo">🌱</div>
+                <div class="logo" aria-hidden="false">
+                    <!-- Use the provided logo image (images/logo.png) -->
+                    <img src="images/logo.png" alt="EcoFit Gear logo">
+                </div>
                 <span class="brand-name">EcoFit Gear</span>
             </div>
             <ul>
@@ -346,7 +360,8 @@
     <section class="hero">
         <h1>Sustainable Athletic Apparel for the Modern Athlete</h1>
         <p>Performance meets responsibility. High-quality fitness gear made from recycled and organic materials that support your active lifestyle and our planet.</p>
-        <a href="#products" class="cta-button">Shop Now</a>
+        <!-- marketing UTM example for campaign tracking -->
+        <a href="#products?utm_source=homepage&utm_campaign=launch" class="cta-button">Shop Now</a>
     </section>
 
     <section id="products">
@@ -354,8 +369,10 @@
         <p class="subtitle">Traceable, sustainable, affordable – fitness gear designed for you and the planet</p>
         
         <div class="products-grid">
-            <div class="product-card">
-                <div class="product-image">👕</div>
+            <div class="product-card" data-sku="EF-TEES-001" data-category="tees">
+                <div class="product-image" aria-hidden="false">
+                    <img src="images/perf-tees.jpg" alt="Performance Tees — breathable organic cotton blend">
+                </div>
                 <div class="product-info">
                     <h3>Performance Tees</h3>
                     <p>Breathable organic cotton blend with moisture-wicking technology. Perfect for training and everyday wear.</p>
@@ -364,8 +381,10 @@
                 </div>
             </div>
 
-            <div class="product-card">
-                <div class="product-image">🩳</div>
+            <div class="product-card" data-sku="EF-SHORTS-002" data-category="shorts">
+                <div class="product-image">
+                    <img src="images/active-shorts.jpg" alt="Active Shorts — lightweight and durable, made from recycled ocean plastics">
+                </div>
                 <div class="product-info">
                     <h3>Active Shorts</h3>
                     <p>Lightweight and durable shorts made from recycled ocean plastics. Designed for maximum movement and comfort.</p>
@@ -374,8 +393,10 @@
                 </div>
             </div>
 
-            <div class="product-card">
-                <div class="product-image">👟</div>
+            <div class="product-card" data-sku="EF-LEGGINGS-003" data-category="leggings">
+                <div class="product-image">
+                    <img src="images/eco-leggings.jpg" alt="Eco Leggings — four-way stretch recycled materials">
+                </div>
                 <div class="product-info">
                     <h3>Eco Leggings</h3>
                     <p>High-performance compression leggings crafted from recycled materials with four-way stretch for any workout.</p>
@@ -384,8 +405,10 @@
                 </div>
             </div>
 
-            <div class="product-card">
-                <div class="product-image">🧥</div>
+            <div class="product-card" data-sku="EF-JACKETS-004" data-category="jackets">
+                <div class="product-image">
+                    <img src="images/training-jackets.jpg" alt="Training Jackets — weather-resistant outerwear with recycled insulation">
+                </div>
                 <div class="product-info">
                     <h3>Training Jackets</h3>
                     <p>Weather-resistant outerwear with recycled insulation. Minimalist design meets maximum functionality.</p>
@@ -394,8 +417,10 @@
                 </div>
             </div>
 
-            <div class="product-card">
-                <div class="product-image">🧢</div>
+            <div class="product-card" data-sku="EF-ACCESS-005" data-category="accessories">
+                <div class="product-image">
+                    <img src="images/sport-accessories.jpg" alt="Sport Accessories — headbands, caps, and gym bags from upcycled materials">
+                </div>
                 <div class="product-info">
                     <h3>Sport Accessories</h3>
                     <p>Headbands, caps, and gym bags made from upcycled materials. Complete your sustainable fitness look.</p>
@@ -404,8 +429,10 @@
                 </div>
             </div>
 
-            <div class="product-card">
-                <div class="product-image">🎽</div>
+            <div class="product-card" data-sku="EF-TANK-006" data-category="tanks">
+                <div class="product-image">
+                    <img src="images/tank-tops.jpg" alt="Tank Tops — ultra-light bamboo fiber tanks with natural antibacterial properties">
+                </div>
                 <div class="product-info">
                     <h3>Tank Tops</h3>
                     <p>Ultra-light bamboo fiber tanks with natural antibacterial properties. Ideal for yoga and high-intensity training.</p>
@@ -419,26 +446,23 @@
     <section id="features" class="features">
         <h2>Why Choose EcoFit Gear?</h2>
         <p class="subtitle">We're different because we care – about you, your performance, and our planet</p>
-        
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">🔍</div>
                 <h3>100% Traceable</h3>
                 <p>Every product comes with complete transparency about materials and sourcing. Scan the QR code to see your garment's journey.</p>
+                <p style="font-size:0.9rem;color:#444;margin-top:8px;">Traceability shown in product packaging and product pages (example: SKU & batch ID).</p>
             </div>
-
             <div class="feature-card">
                 <div class="feature-icon">💰</div>
                 <h3>Affordable Pricing</h3>
                 <p>Sustainability shouldn't break the bank. We offer competitive prices that make eco-friendly fitness accessible to everyone.</p>
             </div>
-
             <div class="feature-card">
                 <div class="feature-icon">♻️</div>
                 <h3>Recycling Program</h3>
                 <p>Return your worn EcoFit gear for store credit. We'll recycle it into new products, closing the loop on waste.</p>
             </div>
-
             <div class="feature-card">
                 <div class="feature-icon">🏃</div>
                 <h3>Performance First</h3>
@@ -467,10 +491,29 @@
             Follow us on social media for workout tips, sustainability insights, and inspiration from our global community. Tag us in your posts to be featured!
         </p>
 
-        <div class="social-icons">
-            <a href="#" class="social-icon" aria-label="Instagram">📷</a>
-            <a href="#" class="social-icon" aria-label="TikTok">🎵</a>
-            <a href="#" class="social-icon" aria-label="YouTube">📹</a>
+        <div class="social-icons" aria-hidden="false">
+            <a href="https://instagram.com/ecofit-gear" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener">
+                <img src="images/instagram.jpeg" alt="Instagram">
+            </a>
+            <a href="https://tiktok.com/@ecofit-gear" class="social-icon" aria-label="TikTok" target="_blank" rel="noopener">
+                <img src="images/tiktok.png" alt="TikTok">
+            </a>
+            <a href="https://youtube.com/@ecofit-gear" class="social-icon" aria-label="YouTube" target="_blank" rel="noopener">
+                <img src="images/youtube.png" alt="YouTube">
+            </a>
+        </div>
+
+        <!-- Marketing + social proof: newsletter and share -->
+        <div style="margin-top:2rem; text-align:center;">
+            <!-- Share links removed -->
+ 
+            <div style="margin-top:1.25rem;">
+                <form id="newsletter-form" class="newsletter" aria-label="Subscribe to EcoFit newsletter">
+                    <input id="email" type="email" placeholder="Your email address" aria-label="Email address">
+                    <button type="submit" class="cta-button">Subscribe</button>
+                </form>
+                <div id="newsletter-msg" aria-live="polite" style="margin-top:0.75rem;color:#4a7c2c;"></div>
+            </div>
         </div>
     </section>
 
@@ -504,6 +547,28 @@
     <footer>
         <p>&copy; 2025 EcoFit Gear. Sustainable Athletic Apparel.</p>
         <p style="margin-top: 1rem;">Performance • Sustainability • Community</p>
+        <p style="margin-top: 0.5rem; font-size:0.85rem">Made for eco-conscious athletes • Product images reflect actual items</p>
     </footer>
+
+    <script>
+        // Newsletter (client-side mock) — replace with real API endpoint later
+        document.getElementById('newsletter-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value.trim();
+            const msg = document.getElementById('newsletter-msg');
+            if (!email || !/.+@.+\..+/.test(email)) {
+                msg.textContent = 'Please enter a valid email.';
+                return;
+            }
+            // example: send to marketing endpoint with UTM info (placeholder)
+            // fetch('/api/subscribe', { method:'POST', body:JSON.stringify({ email, source: 'website' }) })
+            msg.textContent = 'Thanks — you are subscribed! Check your inbox for a welcome coupon.';
+            document.getElementById('newsletter-form').reset();
+        });
+
+        // Light analytics placeholder: add real tracker in production
+        // window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}
+        // gtag('event', 'page_view', { page_path: location.pathname });
+    </script>
 </body>
 </html>
