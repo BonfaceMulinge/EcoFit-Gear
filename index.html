@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoFit Gear - Sustainable Athletic Apparel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #2d5016;
+            font-size: 24px;
+        }
+
+        .brand-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(45, 80, 22, 0.7), rgba(74, 124, 44, 0.7)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%234a7c2c" width="1200" height="600"/><circle fill="%232d5016" opacity="0.3" cx="200" cy="150" r="100"/><circle fill="%2366a832" opacity="0.3" cx="900" cy="400" r="150"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 8rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            background: #66a832;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #4a7c2c;
+            transform: translateY(-3px);
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2d5016;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-image {
+            height: 250px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            color: #2d5016;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-info p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #4a7c2c;
+        }
+
+        .eco-badge {
+            background: #66a832;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        .features {
+            background: #f5f9f3;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #2d5016;
+            margin-bottom: 0.5rem;
+        }
+
+        .mission {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .mission h2 {
+            color: white;
+        }
+
+        .social-proof {
+            background: white;
+        }
+
+        .hashtag-display {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #4a7c2c;
+            margin: 2rem 0;
+            font-weight: bold;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            background: #66a832;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .social-icon:hover {
+            background: #4a7c2c;
+            transform: scale(1.1);
+        }
+
+        .recycling-program {
+            background: #e8f5e9;
+        }
+
+        .program-steps {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .step {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #2d5016;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        footer {
+            background: #2d5016;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <div class="logo">🌱</div>
+                <span class="brand-name">EcoFit Gear</span>
+            </div>
+            <ul>
+                <li><a href="#products">Shop</a></li>
+                <li><a href="#features">Why EcoFit</a></li>
+                <li><a href="#mission">Our Mission</a></li>
+                <li><a href="#recycle">Recycle Program</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Sustainable Athletic Apparel for the Modern Athlete</h1>
+        <p>Performance meets responsibility. High-quality fitness gear made from recycled and organic materials that support your active lifestyle and our planet.</p>
+        <a href="#products" class="cta-button">Shop Now</a>
+    </section>
+
+    <section id="products">
+        <h2>Our Product Line</h2>
+        <p class="subtitle">Traceable, sustainable, affordable – fitness gear designed for you and the planet</p>
+        
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">👕</div>
+                <div class="product-info">
+                    <h3>Performance Tees</h3>
+                    <p>Breathable organic cotton blend with moisture-wicking technology. Perfect for training and everyday wear.</p>
+                    <div class="price">$28</div>
+                    <span class="eco-badge">100% Recycled Polyester</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">🩳</div>
+                <div class="product-info">
+                    <h3>Active Shorts</h3>
+                    <p>Lightweight and durable shorts made from recycled ocean plastics. Designed for maximum movement and comfort.</p>
+                    <div class="price">$35</div>
+                    <span class="eco-badge">Ocean-Bound Plastic</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">👟</div>
+                <div class="product-info">
+                    <h3>Eco Leggings</h3>
+                    <p>High-performance compression leggings crafted from recycled materials with four-way stretch for any workout.</p>
+                    <div class="price">$42</div>
+                    <span class="eco-badge">Certified Organic</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">🧥</div>
+                <div class="product-info">
+                    <h3>Training Jackets</h3>
+                    <p>Weather-resistant outerwear with recycled insulation. Minimalist design meets maximum functionality.</p>
+                    <div class="price">$68</div>
+                    <span class="eco-badge">Recycled Down</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">🧢</div>
+                <div class="product-info">
+                    <h3>Sport Accessories</h3>
+                    <p>Headbands, caps, and gym bags made from upcycled materials. Complete your sustainable fitness look.</p>
+                    <div class="price">$18</div>
+                    <span class="eco-badge">Upcycled Materials</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">🎽</div>
+                <div class="product-info">
+                    <h3>Tank Tops</h3>
+                    <p>Ultra-light bamboo fiber tanks with natural antibacterial properties. Ideal for yoga and high-intensity training.</p>
+                    <div class="price">$24</div>
+                    <span class="eco-badge">Bamboo Fiber</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <h2>Why Choose EcoFit Gear?</h2>
+        <p class="subtitle">We're different because we care – about you, your performance, and our planet</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>100% Traceable</h3>
+                <p>Every product comes with complete transparency about materials and sourcing. Scan the QR code to see your garment's journey.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Affordable Pricing</h3>
+                <p>Sustainability shouldn't break the bank. We offer competitive prices that make eco-friendly fitness accessible to everyone.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">♻️</div>
+                <h3>Recycling Program</h3>
+                <p>Return your worn EcoFit gear for store credit. We'll recycle it into new products, closing the loop on waste.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🏃</div>
+                <h3>Performance First</h3>
+                <p>Eco-friendly doesn't mean compromise. Our gear delivers the durability, comfort, and functionality you need for peak performance.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="mission" class="mission">
+        <h2>Our Mission</h2>
+        <p style="max-width: 800px; margin: 2rem auto; font-size: 1.2rem;">
+            At EcoFit Gear, we believe fitness and environmental responsibility go hand in hand. We're committed to providing sustainable athletic apparel that supports active communities while encouraging responsible consumption. Through transparent sourcing, innovative recycling programs, and community engagement, we're building a movement of conscious athletes who care about their impact on the planet.
+        </p>
+        <p style="max-width: 600px; margin: 2rem auto; font-style: italic;">
+            Join us in creating healthier lifestyles – for ourselves and our world.
+        </p>
+    </section>
+
+    <section id="social" class="social-proof">
+        <h2>Join Our Community</h2>
+        <p class="subtitle">Share your sustainable fitness journey with us</p>
+        
+        <div class="hashtag-display">#EcoFitChallenge #SustainableSweat #GreenGains</div>
+        
+        <p style="text-align: center; max-width: 700px; margin: 2rem auto;">
+            Follow us on social media for workout tips, sustainability insights, and inspiration from our global community. Tag us in your posts to be featured!
+        </p>
+
+        <div class="social-icons">
+            <a href="#" class="social-icon" aria-label="Instagram">📷</a>
+            <a href="#" class="social-icon" aria-label="TikTok">🎵</a>
+            <a href="#" class="social-icon" aria-label="YouTube">📹</a>
+        </div>
+    </section>
+
+    <section id="recycle" class="recycling-program">
+        <h2>EcoFit Recycling Program</h2>
+        <p class="subtitle">Turn your old gear into new possibilities</p>
+        
+        <div class="program-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Return</h3>
+                <p>Send us your worn EcoFit apparel using our prepaid shipping label</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Recycle</h3>
+                <p>We break down materials and transform them into new sustainable products</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Reward</h3>
+                <p>Receive store credit toward your next purchase – because sustainability pays</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="#" class="cta-button">Start Recycling Today</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 EcoFit Gear. Sustainable Athletic Apparel.</p>
+        <p style="margin-top: 1rem;">Performance • Sustainability • Community</p>
+    </footer>
+</body>
+</html>
